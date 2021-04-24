@@ -1,0 +1,3 @@
+Al marcar una clase como abstracta, no se puede instanciar ningun objeto de la misma, 
+por ende solo se pueden instanciar objetos de las clases hijas que hereden de la clase padre, 
+en este caso la clase hija es Rectangulo que extiende de FigutaGeometrica
