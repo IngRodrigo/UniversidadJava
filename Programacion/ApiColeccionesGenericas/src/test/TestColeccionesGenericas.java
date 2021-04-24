@@ -11,12 +11,13 @@ import java.util.*;
  *
  * @author Rodrigo-DevCode
  */
-public class TestColecciones {
+public class TestColeccionesGenericas {
 
     public static void main(String[] args) {
 
         //Lista guarda el orden en el que se insertaron los elmentos, y es un poco mas lento por eso, tambien permite repetir datos
-        List miLista = new ArrayList();
+        //usando el elemnto generico le indicamos que la lista en este caso solo almacenta datos de tipo String
+        List<String> miLista = new ArrayList<>();
         miLista.add("Lunes");
         miLista.add("Martes");
         miLista.add("Miercoles");
@@ -24,9 +25,9 @@ public class TestColecciones {
         miLista.add("Viernes");
         miLista.add("Viernes");
 
-        //imprimir(miLista);
+        imprimir(miLista);
         //Set no guarda el orden, es mas rapido, y no permite datos duplicados, simplemente los desecha
-        Set miSet = new HashSet();
+        Set<String> miSet = new HashSet();
         miSet.add("Lunes");
         miSet.add("Martes");
         miSet.add("Miercoles");
@@ -36,13 +37,13 @@ public class TestColecciones {
 
         //  imprimir(miSet);
         //map no hereda de Collection si no de la clase Map
-        Map miMap = new HashMap();
+        Map<String, String> miMap = new HashMap();
         miMap.put("1", "Rodrigo");
         miMap.put("2", "Diana");
         miMap.put("3", "Johan");
         miMap.put("4", "Jhoel");
 
-        String nombre = (String) miMap.get("1");
+        String nombre = miMap.get("1");
         System.out.println("nombre = " + nombre);
         //imprimir todas las llaves
         imprimir(miMap.keySet());//devuleve un set
@@ -50,8 +51,9 @@ public class TestColecciones {
         imprimir(miMap.values());//values devuelve una coleccion
     }
 
-    private static void imprimir(Collection coleccion) {
-        /*for (Object object : coleccion) {
+    //tambien le indicamos al metodo que imprime una coleccion que la coleccion que recibira es de tipo String
+    private static void imprimir(Collection<String> coleccion) {
+        /*for (String object : coleccion) {
             System.out.println("object = " + object);
         }*/
 
